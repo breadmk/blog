@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
@@ -11,6 +12,8 @@ const StyledContainer = styled.div`
 `;
 
 const JoinForm = () => {
+  const history = useHistory();
+
   let [userForm, setUserForm] = useState({
     username: "",
     password: "",
@@ -27,9 +30,36 @@ const JoinForm = () => {
 
   const joinSubmit = (e) => {
     e.preventDefault();
-    // fetch().then().then();
-    alert("dd");
+    let data = {
+      username: userForm.username,
+      password: userForm.password,
+      email: userForm.email,
+    };
+    fetch("/auth/joinProc", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        // console.log(data);
+        if (data.status === 201) {
+          alert("축하합니다! 회원가입이 완료되었습니다!");
+          history.push("/");
+        } else {
+          alert("회원가입에 실패하였습니다!");
+        }
+      })
+      .catch((error) => console.log(error));
+    // console.log(data);
   };
+
   return (
     <StyledContainer>
       <Form onSubmit={joinSubmit}>

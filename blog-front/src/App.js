@@ -6,7 +6,8 @@ import Footer from "./components/Footer";
 import JoinForm from "./components/JoinForm";
 import LoginForm from "./components/LoginForm";
 import NaviBar from "./components/NaviBar";
-// import NaviBar from "./components/NaviBar";
+import { Call } from "../src/ApiService";
+import WriteForm from "./components/WriteForm";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -19,13 +20,15 @@ function App() {
   //       setMessage(message);
   //     });
   // }, []);
+  // console.log(Call("/"));
 
   return (
     <div className="App">
-      <NaviBar></NaviBar>
+      <Route component={NaviBar}></Route>
       <Route path="/" exact={true} component={CardBar} />
-      <Route path="/user/loginForm" exact={true} component={LoginForm} />
-      <Route path="/user/joinForm" exact={true} component={JoinForm} />
+      <Route path="/auth/loginForm" exact={true} component={LoginForm} />
+      <Route path="/auth/joinForm" exact={true} component={JoinForm} />
+      <Route path="/board/form" exact={true} component={WriteForm} />
       <Footer></Footer>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
