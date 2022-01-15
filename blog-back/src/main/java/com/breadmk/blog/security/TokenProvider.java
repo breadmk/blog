@@ -17,7 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TokenProvider {
 
-	private static final String SECRET_KEY = "NMA8JPctFuna59f5";
+	private static final String SECRET_KEY = "NMA8JWctFuna59a5";
+//	private static final String SECRET_KEY = "NMA8JPctFuna59f5";
 	
 	public String create(User user) {
 		Date expiryDate = Date.from(
@@ -31,7 +32,7 @@ public class TokenProvider {
 				.setIssuedAt(new Date())
 				.setExpiration(expiryDate)
 				.compact();
-		
+				
 		/* 
 		 
 		 { //header

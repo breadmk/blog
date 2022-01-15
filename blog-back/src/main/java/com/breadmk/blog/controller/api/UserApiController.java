@@ -45,7 +45,6 @@ public class UserApiController {
 	
 	@PostMapping("/auth/loginForm")
 	public ResponseEntity<?> authenticate(@RequestBody User entity) {
-		System.out.println("1234");
 		User principal = userService.login(entity,passwordEncoder);
 		System.out.println(principal);
 		if( principal !=null ) {

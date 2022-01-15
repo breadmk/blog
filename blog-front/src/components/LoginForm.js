@@ -53,16 +53,17 @@ const LoginForm = () => {
         // }
       })
       .then((data) => {
-        // console.log(data, "22");
+        console.log(data, "22");
         if (data.token) {
           alert("로그인이 완료되었습니다!");
           sessionStorage.setItem("ACCESS_TOKEN", data.token);
+          sessionStorage.setItem("USERNUMBER", data.id);
           history.push("/");
         } else {
           alert("로그인에 실패하였습니다!");
         }
       })
-      .catch((error) => console.log(error, "dd"));
+      .catch((error) => console.log(error));
     // console.log(data);
   };
 

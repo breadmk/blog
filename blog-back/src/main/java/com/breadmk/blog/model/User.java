@@ -14,12 +14,15 @@ import javax.persistence.UniqueConstraint;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 //ORM => java object -> 테이블로 매핑해주는 기술
+
 
 @Data
 @NoArgsConstructor     // 기본생성자

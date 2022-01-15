@@ -24,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* <RichTextEditor></RichTextEditor> */}
       <Route component={NaviBar}></Route>
       <Route path="/" exact={true} component={CardBar} />
       <Route path="/auth/loginForm" exact={true} component={LoginForm} />
