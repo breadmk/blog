@@ -37,7 +37,7 @@ const LoginForm = () => {
       password: userForm.password,
     };
 
-    fetch("/auth/loginForm", {
+    fetch("http://localhost:8080/auth/loginForm", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",

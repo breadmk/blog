@@ -40,7 +40,7 @@ const WriteForm = () => {
       // user: usernick,
     };
     // const apiToken = sessionStorage.getItem("ACCESS_TOKEN");
-    fetch("/api/write", {
+    fetch("http://localhost:8080/api/write", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -81,16 +81,9 @@ const WriteForm = () => {
               editor={ClassicEditor}
               data=""
               name="content"
-              onReady={(editor) => {
-                // You can store the "editor" and use when it is needed.
-                // console.log("Editor is ready to use!", editor);
-              }}
-              // config={{
-              //   plugins: [Base64UploadAdapter],
-              // }}
+              onReady={(editor) => {}}
               onChange={(event, editor) => {
                 const data = editor.getData();
-                // console.log({ event, editor, data });
                 setBoardForm({
                   ...boardForm,
                   content: data,

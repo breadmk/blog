@@ -34,6 +34,7 @@ const NaviBar = () => {
             BreadMk
           </Link>
         </Navbar.Brand>
+        <Navbar style={{ color: "white" }}>회원정보</Navbar>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

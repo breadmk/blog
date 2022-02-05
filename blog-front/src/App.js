@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
 import CardBar from "./components/CardBar";
@@ -8,6 +8,8 @@ import LoginForm from "./components/LoginForm";
 import NaviBar from "./components/NaviBar";
 import { Call } from "../src/ApiService";
 import WriteForm from "./components/WriteForm";
+import { map } from "jquery";
+import Detail from "./components/Detail";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -30,6 +32,7 @@ function App() {
       <Route path="/auth/loginForm" exact={true} component={LoginForm} />
       <Route path="/auth/joinForm" exact={true} component={JoinForm} />
       <Route path="/board/form" exact={true} component={WriteForm} />
+      <Route path="/board/detail/:id" exact={true} component={Detail} />
       <Footer></Footer>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

@@ -35,7 +35,7 @@ const JoinForm = () => {
       password: userForm.password,
       email: userForm.email,
     };
-    fetch("/auth/joinProc", {
+    fetch("http://localhost:8080/auth/joinProc", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
